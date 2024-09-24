@@ -5,4 +5,7 @@ routes.post('/registeration', registerController.register);
 
 routes.post('/login', registerController.login);
 
+routes.post('/forgot', registerController.forgot);
+
+
 module.exports = routes;

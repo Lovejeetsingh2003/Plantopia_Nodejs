@@ -12,6 +12,15 @@ class userServices{
         throw error;
     }
     }
+
+     static async changePassword(email,password) {
+         try {
+            return  await UserModel.updateOne({email: email, password : password});
+        
+    } catch (error) {
+        throw error;
+    }
+    }
     
     static async checkUser(email) {
         try {

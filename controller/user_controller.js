@@ -32,9 +32,23 @@ exports.login = async (req, res, next) => {
 
         let tokenData = { _id: user._id, email: user.email };
 
-        const token = await userServices.getToken(tokenData, "secretKey", '1h');
+        const token = await userServices.getToken(tokenData, "secretKey", '1s');
 
         res.status(200).json({status:true,token:token});
+    } catch (error) {
+        throw error;
+    }
+}
+
+exports.forgot = async (req, res, next) => {
+    try {
+        const { email, password } = req.body;
+
+        const successReg = await userServices.changePassword(email,password);
+
+        res.json({ status: true, success: "User Password Changed Successfully.",successReg:successReg});
+
+
     } catch (error) {
         throw error;
     }
