@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
 
         let tokenData = { _id: user._id, email: user.email };
 
-        const token = await userServices.getToken(tokenData, "secretKey", '1s');
+        const token = await userServices.getToken(tokenData, "secretKey", '1h');
 
         res.status(200).json({status:true,token:token});
     } catch (error) {
