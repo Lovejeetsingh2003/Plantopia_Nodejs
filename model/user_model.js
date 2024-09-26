@@ -33,5 +33,5 @@ userSchema.methods.comparePassword = async function (userPassword) {
     }
 }
 
-const userModel = db.model('model', userSchema);
+const userModel = db.model('user model', userSchema);
 module.exports = userModel;
