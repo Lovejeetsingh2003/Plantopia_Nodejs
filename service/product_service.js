@@ -10,6 +10,17 @@ class productService{
         throw error;
     }
     }
+
+    static async deleteProduct(product_name) {
+         try {
+            return  await productModel.deleteOne({product_name});
+        
+    } catch (error) {
+        throw error;
+    }
+    }
+    
+   
 }
 
 module.exports = productService;

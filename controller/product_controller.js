@@ -12,3 +12,14 @@ exports.addProduct = async (req, res, next) => {
         throw error;
     }
 }
+
+exports.deleteProduct = async (req, res, next) => {
+    try {
+        const { product_name } = req.body;
+        const successdel = await productService.deleteProduct(product_name);
+        res.json({ status: true, success: "Product Successfully Deleted." });
+    } catch (error) {
+        throw error;
+    }
+}
+
