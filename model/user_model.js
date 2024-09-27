@@ -10,7 +10,8 @@ const userSchema = new Schema({
         unique: true,
         required: true,
         lowercase : true,
-    }, password: {type :String,required :true,}
+    }, password: { type: String, required: true, },
+     timestamp: { type:Date,required: true,}
 })
 
 userSchema.pre('save', async function () {

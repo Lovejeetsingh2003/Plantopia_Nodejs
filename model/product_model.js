@@ -13,7 +13,8 @@ const productSchema = new Schema({
     product_price: { type: Number, required: true, },
     product_type: { type: String, required: true, },
     is_toppick: { type: Number, required: true, },
-    is_instock : {type:Number,required:true,},
+    is_instock: { type: Number, required: true, },
+    timestamp: { type:Date,required: true,}
 })
 
 const productModel = db.model('product model', productSchema);

@@ -6,5 +6,7 @@ routes.post('/addproduct', productController.addProduct);
 
 routes.post('/deleteproduct', productController.deleteProduct);
 
+routes.post('/updateproduct', productController.updateProduct);
+
 
 module.exports = routes;
