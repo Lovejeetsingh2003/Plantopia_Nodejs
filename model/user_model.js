@@ -11,8 +11,8 @@ const userSchema = new Schema({
         required: true,
         lowercase : true,
     }, password: { type: String, required: true, },
-     timestamp: { type:Date,required: true,}
-})
+     
+},{timestamps : true})
 
 userSchema.pre('save', async function () {
     try {
