@@ -1,6 +1,10 @@
 const { json } = require('body-parser');
 const UserModel = require('../model/user_model');
 const jwt = require('jsonwebtoken');
+const userModel = require('../model/user_model');
+const bcrypt = require('bcrypt');
+
+
 class userServices{
 
     static async registerUser(email, password) {
@@ -30,6 +34,8 @@ class userServices{
             throw error
         }
     }
+
+  
 
     static async getToken(tokenData, secretKey, jwt_expire) {
         return jwt.sign(tokenData, secretKey, { expiresIn: jwt_expire });

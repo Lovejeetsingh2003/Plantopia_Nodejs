@@ -1,10 +1,10 @@
 const productModel = require('../model/product_model');
 
 class productService{ 
-    static async addProduct(product_name,product_desc,product_price,product_type,is_toppick,is_instock) {
+    static async addProduct(product_name,product_desc,product_price,product_type,product_pic,is_instock) {
         try {
 
-            const addproduct = new productModel({ product_name,product_desc,product_price,product_type,is_toppick,is_instock });
+            const addproduct = new productModel({ product_name,product_desc,product_price,product_type,product_pic,is_instock });
             return await addproduct.save();
         
     } catch (error) {
@@ -21,9 +21,9 @@ class productService{
     }
     }
     
-   static async updateProduct(_id, product_name,product_desc,product_price,product_type,is_toppick,is_instock) {
+   static async updateProduct(_id, product_name,product_desc,product_price,product_type,product_pic,is_instock) {
          try {
-            return  await productModel.updateOne({_id, product_name,product_desc,product_price,product_type,is_toppick,is_instock});
+            return  await productModel.updateOne({_id, product_name,product_desc,product_price,product_type,product_pic,is_instock});
         
     } catch (error) {
         throw error;

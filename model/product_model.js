@@ -9,10 +9,10 @@ const productSchema = new Schema({
         unique:true,
         required: true,
     },
+    product_pic:{type : String , required : true, unique:true,},
     product_desc: { type: String, required: true, },
     product_price: { type: Number, required: true, },
     product_type: { type: String, required: true, },
-    is_toppick: { type: Number, required: true, },
     is_instock: { type: Number, required: true, },
   
 },{timestamps : true})

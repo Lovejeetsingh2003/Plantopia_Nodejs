@@ -43,7 +43,20 @@ exports.login = async (req, res, next) => {
 exports.forgot = async (req, res, next) => {
     try {
         const { email, password } = req.body;
+        
+        const user = await userServices.checkUser(email);
 
+        if (!user) {
+            res.json("User Doesn't Exist");
+        }
+
+        const isMatch = await user.comparePassword(password);
+
+        if (isMatch === false) {
+            res.json("Password Invalid");
+        }
+
+       
         const successReg = await userServices.changePassword(email,password);
 
         res.json({ status: true, success: "User Password Changed Successfully.",successReg:successReg});
