@@ -33,3 +33,13 @@ exports.updateProduct = async (req, res, next) => {
     }
 }
 
+exports.getProducts = async (req, res,next) => {
+   try {
+       const products =await productService.getProducts();
+       res.send({data : products,
+           total : products.length});
+   } catch (error) {
+       throw error;
+   }
+}
+
