@@ -31,13 +31,11 @@ class productService{
     }
 
     static async getProducts() {
-         try {
-             let data = await productModel.find();
-             return data;
-        
-    } catch (error) {
-        throw error;
-    }
+        try {
+            return await productModel.find();
+        } catch (error) {
+            throw error;
+        }
     }
 }
 

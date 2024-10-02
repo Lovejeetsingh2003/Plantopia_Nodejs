@@ -33,13 +33,16 @@ exports.updateProduct = async (req, res, next) => {
     }
 }
 
-exports.getProducts = async (req, res,next) => {
-   try {
-       const products =await productService.getProducts();
-       res.send({data : products,
-           total : products.length});
-   } catch (error) {
-       throw error;
-   }
+exports.getProducts = async (req, res, next) => {
+    try {
+        const products = await productService.getProducts();
+        res.send({
+            data: products,
+            total: products.length
+        });
+    } catch (error) {
+        console.error("Error fetching products: ", error);
+        res.status(500).json({ status: false, error: "Error fetching products." });
+    }
 }
 
