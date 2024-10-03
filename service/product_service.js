@@ -12,9 +12,10 @@ class productService{
     }
     }
 
-    static async deleteProduct(_id) {
-         try {
-            return  await productModel.deleteOne({_id});
+    static async deleteProduct(id) {
+        try {
+            
+            return  await productModel.findByIdAndDelete(id);
         
     } catch (error) {
         throw error;
