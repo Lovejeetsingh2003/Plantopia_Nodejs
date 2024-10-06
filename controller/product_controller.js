@@ -47,3 +47,25 @@ exports.getProducts = async (req, res, next) => {
     }
 }
 
+exports.getProductById = async (req, res, next) => {
+    try {
+        var { id } = req.body; 
+        const product = await productService.getProductById(id); 
+        
+        if (!product) {
+            return res.status(404).json({ status: false, error: "Product not found." });
+        }
+       
+        res.send({
+            data: product,  
+            total: product.length        
+        });
+    } catch (error) {
+        console.error("Error fetching product: ", error);
+        res.status(500).json({ status: false, error: "Error fetching product." });
+    }
+};
+
+
+
+

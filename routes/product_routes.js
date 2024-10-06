@@ -11,5 +11,7 @@ routes.post('/updateproduct', productController.updateProduct);
 
 routes.get('/getproduct', productController.getProducts);
 
+routes.post('/getproductbyid', productController.getProductById);
+
 
 module.exports = routes;

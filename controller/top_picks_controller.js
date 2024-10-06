@@ -20,12 +20,25 @@ exports.updateTopPick = async (req, res, next) => {
     }
 }
 
-exports.deleteFromTopPick = async (req, res, next) => {
+exports.deleteAllFromTopPick = async (req, res, next) => {
     try {
-        const {_id} = req.body;
-        const successdeleted = await topPickService.deleteTopPicks(_id);
+        const successdeleted = await topPickService.deleteAllTopPicks();
         res.json({ status: true, success: "Product Successfully Deleted From Top Picks List."});
     } catch (error) {
         throw error;
+    }
+}
+
+exports.getTopPicks = async (req, res, next) => {
+    try {
+        const list = await topPickService.getTopPicks();
+       
+        res.send({
+            data: list,
+            total: list.length
+        });
+    } catch (error) {
+        console.error("Error fetching top pick list: ", error);
+        res.status(500).json({ status: false, error: "Error fetching products top pick list." });
     }
 }

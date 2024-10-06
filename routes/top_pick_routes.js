@@ -6,7 +6,8 @@ routes.post('/addtoppick',topPickController.addTopPick);
 
 routes.post('/updatetoppick',topPickController.updateTopPick);
 
-routes.post('/deletetoppick',topPickController.deleteFromTopPick);
+routes.post('/deletealltoppick',topPickController.deleteAllFromTopPick);
 
+routes.get('/gettoppick', topPickController.getTopPicks);
 
 module.exports = routes;

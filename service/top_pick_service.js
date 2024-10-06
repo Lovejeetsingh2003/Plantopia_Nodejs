@@ -21,10 +21,18 @@ class topPickService{
         }
     }
 
-    static async deleteTopPicks(_id) {
+    static async deleteAllTopPicks() {
         try {
-            return await topPickModel.deleteOne({ _id});
+            return await topPickModel.deleteMany({});
             
+        } catch (error) {
+            throw error;
+        }
+    }
+
+     static async getTopPicks() {
+        try {
+            return await topPickModel.find();
         } catch (error) {
             throw error;
         }

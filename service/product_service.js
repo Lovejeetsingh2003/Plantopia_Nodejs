@@ -38,6 +38,14 @@ class productService{
             throw error;
         }
     }
+
+  static async getProductById(id) {
+    try {
+        return await productModel.find({ _id : id });
+    } catch (error) {
+        throw error;
+    }
+}
 }
 
 module.exports = productService;
