@@ -21,12 +21,18 @@ class recommendedService{
         }
     }
 
-    static async deleteRecommended(_id) {
+   static async deleteAllFromRecommended() {
         try {
-            return await recommendedModel.deleteOne({
-                _id
-            });
+            return await recommendedModel.deleteMany({});
             
+        } catch (error) {
+            throw error;
+        }
+    }
+
+     static async getRecommended() {
+        try {
+            return await recommendedModel.find();
         } catch (error) {
             throw error;
         }

@@ -20,12 +20,25 @@ exports.updateRecommended = async (req, res, next) => {
     }
 }
 
-exports.deleteRecommended = async (req, res, next) => {
+exports.deleteAllFromRecommended = async (req, res, next) => {
     try {
-        const {_id} = req.body;
-        const successdeleted = await recommendedService.deleteRecommended(_id);
+        const successdeleted = await recommendedService.deleteAllFromRecommended();
         res.json({ status: true, success: "Product Successfully Deleted From Recommended List."});
     } catch (error) {
         throw error;
+    }
+}
+
+exports.getRecommended = async (req, res, next) => {
+    try {
+        const list = await recommendedService.getRecommended();
+       
+        res.send({
+            data: list,
+            total: list.length
+        });
+    } catch (error) {
+        console.error("Error fetching Recommended list: ", error);
+        res.status(500).json({ status: false, error: "Error fetching products Recommended list." });
     }
 }

@@ -6,7 +6,9 @@ routes.post('/addrecommended',recommendedController.addRecommended);
 
 routes.post('/updaterecommended',recommendedController.updateRecommended);
 
-routes.post('/deleterecommended',recommendedController.deleteRecommended);
+routes.post('/deleteallrecommended',recommendedController.deleteAllFromRecommended);
+
+routes.get('/getrecommended', recommendedController.getRecommended);
 
 
 module.exports = routes;
