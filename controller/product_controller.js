@@ -3,9 +3,9 @@ const productService = require('../service/product_service');
 
 exports.addProduct = async (req, res, next) => {
     try {
-        const { product_name,product_desc,product_price,product_type,product_pic,is_instock} = req.body;
+        const { product_first_name, product_last_name,product_desc,product_price,product_type,product_pic,is_instock} = req.body;
        
-        const successadd= await productService.addProduct(product_name,product_desc,product_price,product_type,product_pic,is_instock);
+        const successadd= await productService.addProduct(product_first_name, product_last_name,product_desc,product_price,product_type,product_pic,is_instock);
 
         res.json({ status: true, success: "Product Successfully Added." });
     } catch (error) {
@@ -25,8 +25,8 @@ exports.deleteProduct = async (req, res, next) => {
 
 exports.updateProduct = async (req, res, next) => {
     try {
-        const { _id ,product_name,product_desc,product_price,product_type,product_pic,is_instock} = req.body;
-        const successdel = await productService.updateProduct(_id,product_name,product_desc,product_price,product_type,product_pic,is_instock);
+        const { _id ,product_first_name, product_last_name,product_desc,product_price,product_type,product_pic,is_instock} = req.body;
+        const successdel = await productService.updateProduct(_id,product_first_name, product_last_name,product_desc,product_price,product_type,product_pic,is_instock);
         res.json({ status: true, success: "Product Successfully Updated." });
     } catch (error) {
         throw error;

@@ -4,10 +4,15 @@ const db = require('../config/db');
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
-    product_name: {
+    product_first_name: {
         type: String,
         unique: true, 
         required: true,
+    },
+    product_last_name: {
+        type: String,
+        unique: true, 
+        required : false,
     },
     product_pic: {
         type: String,
