@@ -15,7 +15,9 @@ exports.updateRecommended = async (req, res, next) => {
         const {_id,product_id} = req.body;
         const successupdated = await recommendedService.updateRecommended(_id,product_id);
         res.json({ status: true, success: "Product Successfully Updated in Recommended List."});
-    } catch (error) {
+    } catch (error) {  
+
+        
         throw error;
     }
 }

@@ -11,8 +11,6 @@ const productSchema = new Schema({
     },
     product_last_name: {
         type: String,
-        unique: true, 
-        required : false,
     },
     product_pic: {
         type: String,
