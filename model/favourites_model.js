@@ -4,19 +4,22 @@ const db = require('../config/db');
 
 const { Schema } = mongoose;
 
-const cartSchema = new Schema({
+const favouriteSchema = new Schema({
     user_id: {
-         type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref : 'user model'
     },
     product_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref : 'product model'
     },
-    quantity: { type: Number, required: true, },    
+    is_favourite: {
+      type: Boolean,
+        required: false,  
+    },
 },{timestamps : true})
 
 
 
-const cartModel = db.model('cart model', cartSchema);
-module.exports = cartModel;
+const favouriteModel = db.model('favourite model', favouriteSchema);
+module.exports = favouriteModel;

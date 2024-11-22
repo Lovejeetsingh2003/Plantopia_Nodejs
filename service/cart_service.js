@@ -21,6 +21,14 @@ class cartService{
         }
     }
 
+     static async getFromCart() {
+        try {
+            return await cartModel.find();
+        } catch (error) {
+            throw error;
+        }
+    }
+
     static async deleteFromCart(_id) {
         try {
             return await cartModel.deleteOne({ _id});
