@@ -2,8 +2,8 @@ const cartService = require('../service/cart_service');
 
 exports.addToCart = async (req, res, next) => {
     try {
-        const {product_id,quantity} = req.body;
-        const successadd = await cartService.addProductToCart(product_id,quantity);
+        const {product_id,quantity,price} = req.body;
+        const successadd = await cartService.addProductToCart(product_id,quantity,price);
         res.json({ status: true, success: "Product Successfully Added To Cart."});
     } catch (error) {
         throw error;

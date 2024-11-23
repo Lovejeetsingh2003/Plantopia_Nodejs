@@ -3,9 +3,9 @@ const cartModel = require('../model/cart_model');
 
 class cartService{ 
 
-    static async addProductToCart(product_id,quantity) {
+    static async addProductToCart(product_id,quantity,price) {
         try {
-            const addProductToCart = new cartModel({ product_id,quantity });
+            const addProductToCart = new cartModel({ product_id,quantity,price });
             return await addProductToCart.save();
         } catch (error) {
             throw error;
