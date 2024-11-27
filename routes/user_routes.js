@@ -7,5 +7,7 @@ routes.post('/login', user_controller.login);
 
 routes.post('/forgot', user_controller.forgot);
 
+routes.post('/updateuserdata', user_controller.updateUser);
+
 
 module.exports = routes;

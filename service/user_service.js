@@ -35,7 +35,14 @@ class userServices{
         }
     }
 
-  
+     static async updateUser(_id,username,email,mobile_no,gender) {
+        try {
+            return await userModel.updateOne({ _id,username,email,mobile_no,gender});
+            
+        } catch (error) {
+            throw error;
+        }
+    }
 
     static async getToken(tokenData, secretKey, jwt_expire) {
         return jwt.sign(tokenData, secretKey, { expiresIn: jwt_expire });

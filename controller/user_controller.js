@@ -13,6 +13,16 @@ exports.register = async (req, res, next) => {
     }
 }
 
+exports.updateUser = async (req, res, next) => {
+    try {
+        const {_id,username,email,mobile_no,gender} = req.body;
+        const successupdated = await userServices.updateUser(_id,username,email,mobile_no,gender);
+        res.json({ status: true, success: "User Data Successfully Updated."});
+    } catch (error) {
+        throw error;
+    }
+}
+
 exports.login = async (req, res, next) => {
     try {
         const { email, password } = req.body;

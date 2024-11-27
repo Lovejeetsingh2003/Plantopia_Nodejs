@@ -9,9 +9,27 @@ const userSchema = new Schema({
         type: String,
         unique: true,
         required: true,
-        
         lowercase : true,
-    }, password: { type: String, required: true, },
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+     usename: {
+        type: String,
+         required: false,
+        unique : false,
+    },
+      mobile_no: {
+        type: String,
+          required: false,
+        unique : true,
+    },
+      gender: {
+        type: String,
+          required: false,
+        unique : false,
+    },
      
 },{timestamps : true})
 
