@@ -24,6 +24,7 @@ exports.getAddress = async (req, res, next) => {
     }
 }
 
+
 exports.updateAddress = async (req, res, next) => {
     try {
         const {_id,username,phone_no,alternate_phone_no,pincode,state,city,house_no,area,nearby_landmark,address_type} = req.body;

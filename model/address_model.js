@@ -17,17 +17,17 @@ const addressSchema = new Schema({
     phone_no: {
         type: String,
          required: true,
-        unique : true,
+        unique : false,
     },
     alternate_phone_no: {
        type: String,
        required: false,
-       unique : true,
+       unique : false,
     }, 
      pincode: {
        type: String,
        required: true,
-       unique : true,
+       unique : false,
     }, 
      state: {
        type: String,
