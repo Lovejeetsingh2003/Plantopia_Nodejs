@@ -6,7 +6,7 @@ routes.post('/addtocart', cartController.addToCart);
 
 routes.get('/getcartproducts', cartController.getFromCart);
 
-routes.post('/deletefromcart',cartController.deleteFromCart );
+routes.post('/deletefromcart', cartController.deleteFromCart);
 
 routes.post('/updatecart',cartController.updateCart );
 
